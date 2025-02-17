@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactElement } from 'react';
 import axios from 'axios';
 
 interface Product {
@@ -8,13 +8,12 @@ interface Product {
   description: string;
 }
 
-function App() {
+const App = (): ReactElement => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     console.log('Starting to fetch data...');
-    // Change this line:
-    axios.get<Product[]>('https://simple-shop-backend-production.up.railway.app/api/products')  //ANY instance of your frontend (local or Vercel) to get data from Railway.
+    axios.get<Product[]>('https://simple-shop-backend-production.up.railway.app/api/products')
       .then(response => {
         console.log('Data received:', response.data);
         setProducts(response.data);
@@ -38,6 +37,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
