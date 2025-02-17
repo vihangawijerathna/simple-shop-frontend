@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     console.log('Starting to fetch data...');
     // Change this line:
-axios.get<Product[]>('https://simple-shop-backend-production.up.railway.app/api/products')
+    axios.get<Product[]>('https://simple-shop-backend-production.up.railway.app/api/products')  //ANY instance of your frontend (local or Vercel) to get data from Railway.
       .then(response => {
         console.log('Data received:', response.data);
         setProducts(response.data);
