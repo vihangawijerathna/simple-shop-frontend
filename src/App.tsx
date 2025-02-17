@@ -13,7 +13,8 @@ function App() {
 
   useEffect(() => {
     console.log('Starting to fetch data...');
-    axios.get<Product[]>('https://simple-shop-backend-production.up.railway.app/api/products')
+    // Change this line:
+axios.get<Product[]>('https://simple-shop-backend-production.up.railway.app/api/products')
       .then(response => {
         console.log('Data received:', response.data);
         setProducts(response.data);
